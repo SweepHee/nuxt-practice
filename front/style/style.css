@@ -1,0 +1,10 @@
+.menu-dropdown.spread-on {
+    transition: .7s;
+    height: 175px !important;
+    transition-timing-function: ease-in-out;
+}
+
+.container {
+    width: 1240px;
+    margin:0 auto;
+}

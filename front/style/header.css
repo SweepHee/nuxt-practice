@@ -1,0 +1,104 @@
+
+header {
+    width: 100%;
+    height: 90px;
+    position: fixed;
+    background-color: transparent;
+    z-index:99999;
+    transition: 5s;
+}
+
+header.on {
+    background-color: #ffffff;
+    transition: 5s;
+}
+
+header .menu-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    width: 1240px;
+    margin: 0 auto;
+}
+
+header .logo-wrap img {
+    vertical-align: middle;
+}
+
+header ul li {
+    display: inline-block;
+    color: #ffffff;
+    vertical-align: middle;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+header.on ul li {
+    color: #444 !important;
+}
+
+header .header-menus {
+    margin-left: 120px;
+    height: 90px;
+    line-height: 90px;
+}
+
+header .header-menus ul li {
+    /* padding: 0 32px; */
+    width: 150px;
+    text-align: center;
+    font-size: 17px;
+}
+
+header .header-info ul {
+    padding: 0;
+}
+
+header .header-info ul li:first-child {
+    margin-right: 15px;
+}
+
+header .header-info ul li:last-child:before {
+    display: inline-block;
+    clear: both;
+    content: "";
+    width: 1px;
+    height: 14px;
+    background: #fff;
+    top: 40px;
+    right: -13px;
+    margin: 0 15px 0 10px;
+}
+
+header .menu-dropdown {
+    width: 100%;
+    height: 0;
+    background-color: #ffffff;
+    transition: 0.7s;
+    transition-timing-function: ease-in-out;
+    overflow:hidden;
+}
+
+header .menu-dropdown .dropdown-wrap {
+    position: relative;
+    left: 36.5%;
+}
+
+header .menu-dropdown ul {
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 0;
+    padding-top: 15px;
+}
+
+header .menu-dropdown ul li {
+    display: block;
+    color: #000000;
+    text-align: center;
+    width: 150px;
+    height: 36px;
+}
+
+header .menu-dropdown ul li a {
+    color: #555555;
+}

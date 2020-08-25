@@ -1,0 +1,40 @@
+.fade-down {
+  animation: fadedown 3s 0s ease alternate;
+  -webkit-animation: fadedown 3s 0s ease alternate;
+  -moz-animation: fadedown 3s 0s ease alternate;
+  -ms-animation: fadedown 3s 0s ease alternate;
+  -o-animation: fadedown 3s 0s ease alternate;
+}
+
+@keyframes fadedown {
+  0% {
+    margin-top: -100px;;
+  }
+
+  70% {
+    margin-top: 10px;
+  }
+
+  100% {
+    margin-top: 0;
+  }
+}
+
+
+.ani-opacity {
+  animation: opacity 3s 0s ease alternate;
+  -webkit-animation: opacity 3s 0s ease alternate;
+  -moz-animation: opacity 3s 0s ease alternate;
+  -ms-animation: opacity 3s 0s ease alternate;
+  -o-animation: opacity 3s 0s ease alternate;
+}
+
+
+@keyframes opacity {
+  to {
+    opacity: 0;
+  }
+  from {
+    opacity: 1;
+  }
+}
