@@ -1,19 +1,37 @@
 const express = require("express");
-
+const db = require("./models");
+const { sequelize } = require("./models");
 const app = express();
+const cors = require("cors");
 
-// 기본적으로 익스프레스는 json을 못 받는다. 아래 선언해야 함.
+app.use(cors());
+
+app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true,
+  }));
+
 app.use(express.json());
-
-// form을 통해서 전송된 데이터를 req.body로 받으려면 아래 선언해줘야 함.
 app.use(express.urlencoded({ extended: false}));
 
 app.get("/", (req, res) => {
     res.send("안녕 시퀄라이즈");
 })
 
-app.post("/user", (req, res) => {
-    console.log(req.body);
+app.post("/user", async (req, res) => {
+    
+    let query = "select * from users where :id ";
+    let User = await sequelize.query(
+        query,
+        {
+            replacements: { id: "1" },
+            type: sequelize.QueryTypes.SELECT,
+            raw: true
+        }
+    );
+
+    console.log(User);
+    res.json(User);
 })
 
 app.listen(3085, () => {

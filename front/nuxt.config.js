@@ -22,8 +22,13 @@ module.exports = {
       vendor: ["aos", "testing"]
     },
     modules: [
-        "~/modules/common"
+        "~/modules/common", '@nuxtjs/axios'
     ],
     plugins: [{src: "~/plugins/aos", ssr: false}],
-    css: ["aos/dist/aos.css"]
+    css: ["aos/dist/aos.css"],
+    axios: {
+        browserBaseURL: 'http://localhost:3085',
+        baseURL: 'http://localhost:3085',
+        https: false,
+    },
 }
