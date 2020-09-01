@@ -32,8 +32,10 @@
                         <li>
                             <img src="~assets/img/top_banner.png" alt="플레이앱">
                         </li>
-                        <li>Kor</li>
-                        <li>Eng</li>
+                        <li>
+                            <nuxt-link to="/signup">sign up</nuxt-link>
+                        </li>
+                    
                     </ul>
                 </div> <!-- header-info end -->
 

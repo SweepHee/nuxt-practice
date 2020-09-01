@@ -11,7 +11,7 @@ export const mutations = {
 };
 
 
-export const actions = {
+export const actions = {    
     getUserList({ commit }, payload) {
         this.$axios.post('http://localhost:3085/user', {
             email: payload.email

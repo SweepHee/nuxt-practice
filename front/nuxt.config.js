@@ -24,7 +24,10 @@ module.exports = {
     modules: [
         "~/modules/common", '@nuxtjs/axios'
     ],
-    plugins: [{src: "~/plugins/aos", ssr: false}],
+    plugins: [
+        {src: "~/plugins/aos", ssr: false},
+        { src: '~/plugins/vue-flash-message.js', mode: 'client' }
+    ],
     css: ["aos/dist/aos.css"],
     axios: {
         browserBaseURL: 'http://localhost:3085',

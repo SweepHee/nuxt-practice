@@ -14,7 +14,7 @@
                             <p data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">Our mission is to create a world Digital assets are</p>
                             <p data-aos="fade-up" data-aos-delay="700" data-aos-duration="1000">more valuable and accessible to everyone</p>
                         </div>
-            
+                        
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@ export default {
         }
     },
     mounted() {
-        this.$store.dispatch("users/getUserList", {});
+        this.user = this.$store.dispatch("users/getUserList", {});
     },
     methods: {
         test() {
