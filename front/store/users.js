@@ -29,7 +29,7 @@ export const actions = {
         });
     },
     signUp({commit}, payload) {
-        this.$axios.post("/user.php", {
+        this.$axios.post("/user/create", {
             email: payload.email,
             name: payload.name,
             password: payload.password

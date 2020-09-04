@@ -1,16 +1,25 @@
 <?php
-header('Access-Control-Allow-Origin : http://localhost:3000'); // 예시. header('Access-Control-Allow-Origin : http://client.google.com');
+header('Access-Control-Allow-Origin : http://localhost:3000');
 header('Access-Control-Allow-Credentials: true');
 header("Access-Control-Allow-Methods: POST, GET, PUT, DELETE, OPTIONS");
 header("Access-Control-Allow-Headers: Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization");
 header("Content-type:text/html;charset=utf-8");
 
+/* autoload */
+require_once(__DIR__."/vendor/autoload.php");
+
+/* modules */
+require_once(__DIR__."/modules/common.php");
+
+/* router */
 require_once(__DIR__."/routes/user.php");
+
+
 
 $request = $_SERVER['REQUEST_URI'];
 $router = explode("/", $request)[1];
 
-$payload = $_REQUEST;
+$payload = req_to_array();
 
 switch ($router)
 {
@@ -18,8 +27,7 @@ switch ($router)
         require __DIR__ . '/views/index.php';
         break;
     case "user" :
-        echo json_encode(["code"=>1, "msg"=>222, "data"=>$payload]);
-//        userRouter($request, $_REQUEST);
+        userRouter($request, $payload);
         break;
     case '' :
         require __DIR__ . '/views/index.php';
