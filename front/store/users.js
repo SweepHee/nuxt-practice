@@ -7,16 +7,19 @@ export const state = () => ({
 export const mutations = {
     getUsers(state, payload) {
         state.list = payload;
+    },
+    createdUser(state, payload) {
+        state.me = payload;
     }
 };
 
 
 export const actions = {    
     getUserList({ commit }, payload) {
-        this.$axios.post('http://localhost:3085/user', {
+        this.$axios.post('/user/view', {
             email: payload.email
         }, {
-            withCredentials: false, /* 로컬에서할땐 true주니까 안됨 */
+            withCredentials: false,
           })
         .then((res) => {
             commit("getUsers", res.data);
@@ -24,5 +27,21 @@ export const actions = {
         .catch((err) => {
             console.error(err);
         });
+    },
+    signUp({commit}, payload) {
+        this.$axios.post("/user.php", {
+            email: payload.email,
+            name: payload.name,
+            password: payload.password
+        }, {
+            withCredentials: true,
+        })
+            .then((res) => {
+                console.log(res);
+                // commit("createdUser", res.data);
+            })
+            .catch((err) => {
+                console.error(err);
+            });
     }
 }

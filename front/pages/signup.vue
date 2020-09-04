@@ -80,45 +80,18 @@ export default {
                             icon: '/custom_style.svg',
                             time: 3000,
                             blockClass: 'onlyMessage1'
-                        },
-                        {
-                            mounted: this.mountedSound,
-                            destroyed: this.destroyedSound
                         }
                     );
                 })
 
-        
-
                 return false;
             }
 
-              
-           
-
-
-            // if(this.password !== this.passwordCheck) {
-            //     this.FlashMessage.success({
-            //                 title: 'Don\'t Warry',
-            //                 message: 'Be Happy!',
-            //                 time: 5000,
-            //                 blockClass: 'custom-block-class'
-            //             });
-            //     return false;
-            // }
-
-            // this.FlashMessage.success({
-            //                 title: 'Don\'t Warry2222',
-            //                 message: 'Be Happy!',
-            //                 time: 5000,
-            //                 blockClass: 'custom-block-class'
-            //             });
-
-            // this.$store.dispatch("users/signUp", {
-            //     email: this.email,
-            //     password: this.password,
-            //     name: this.name
-            // })
+            this.$store.dispatch("users/signUp", {
+                email: this.email,
+                password: this.password,
+                name: this.name
+            })
         }
     }
 }
